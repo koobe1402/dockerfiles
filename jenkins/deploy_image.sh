@@ -38,8 +38,7 @@ echo ${DOCKER_IMAGE_ID}
 docker tag ${DOCKER_IMAGE_ID} ${DOCKERHUB_USERNAME}/${DOCKERHUB_REPOSITORY}:${DOCKERHUB_TAG}
 
 # Login to docker hub registry
-docker login -u ${DOCKERHUB_USERNAME} -p
- ${DOCKERHUB_PASSWORD}
+docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
 
 # Push the image to registry
 docker push ${DOCKERHUB_USERNAME}/${DOCKERHUB_REPOSITORY}
