@@ -1,0 +1,23 @@
+version: '2'
+services:
+  jenkins:
+    build: ./jenkins
+    volumes:
+      - "/data/storage_ssd_lv/prd/ci/jenkins:/var/lib/jenkins"
+    container_name: jenkins
+    restart: always
+    ports:
+      - "8080:8080"
+    domainname: koobe.internal
+    hostname: jenkins
+    dns:
+      - 192.168.1.200
+    dns_search:
+      - koobe.internal
+    networks:
+      - jenkins
+networks:
+  jenkins:
+    external:
+      name:
+        jenkins
