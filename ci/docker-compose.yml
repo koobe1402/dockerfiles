@@ -3,7 +3,7 @@ services:
   jenkins:
     build: ./jenkins
     volumes:
-      - "/data/storage_ssd_lv/prd/ci/jenkins:/var/lib/jenkins"
+      - "/data/storage_ssd_lv/prd/ci/jenkins/jobs:/var/lib/jenkins/jobs"
     container_name: jenkins
     restart: always
     ports:
