@@ -17,7 +17,7 @@ RUN chmod 700 /bin/run.sh
 
 RUN mkdir ${JENKINS_HOME}/init.groovy.d
 COPY include/plugins.groovy ${JENKINS_HOME}/init.groovy.d/
-COPY include/plugins_to_install ${JENKINS_HOME}/plugins_to_install
+COPY include/plugins.txt ${JENKINS_HOME}/plugins.txt
 
 EXPOSE ${http_port}/tcp
 CMD ["bin/run.sh"]
